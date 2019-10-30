@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}"> 
+</head>
+        
+<body>
+
+<div class="one"><h1>App Rating quality</h1></div>
+<form  method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+
+        <table>
+        	<tbody>
+		        <tr>
+			        <th class='tex'>Languages:</th>
+			        <th class='inp'><input class='input' name="a" value={{ data_r[0][0] }} required></th>
+		        </tr>
+		        <tr>
+			        <th class='tex'>In-app Purchases (0 or 1):</th>
+			        <th class='inp'><input class='input' name="b" type="number" min=0 max=1 value={{ data_r[1][0] }} required></th>
+		        </tr>
+		        <tr>
+					<th class='tex'>Price (0 or 1) - free or not:</th>
+			        <th class='inp'><input class='input' name="c" type="number" min=0 max=1 value={{ data_r[2][0] }} required></th>
+				</tr>        
+		        <tr>
+					<th class='tex'>Name:</th>
+			        <th class='inp'><input class='input' name="d" type="text" value={{ data_r[3][0] }} required></th>
+				</tr>
+		        <tr>
+					<th class='tex'>Age Rating:</th>
+			        <th class='inp'><input class='input' name="e" value={{ data_r[4][0] }} required></th>
+				</tr>
+		        <tr>
+					<th class='tex'>Size:</th>
+			        <th class='inp'><input class='input' name="f" type="number" value={{ data_r[5][0] }} required></th>
+				</tr>
+		        <tr>
+					<th class='tex'>Genres(1 or more): </th>
+			        <th class='inp'><input class='input' name="j" type="text" value={{ data_r[6][0] }} required></th>
+				</tr>        
+		        <tr>
+					<th class='tex'>Original Release Date:</th>
+			        <th class='inp'><input class='input' name="k" type="text" value={{ data_r[7][0] }} required></th>
+		 		</tr>       
+		        <tr>
+					<th class='tex'>Current Version Release Date: </th> 
+			        <th class='inp'><input class='input' name="l" type="text" value={{ data_r[8][0] }} required></th>
+				</tr>        
+		        
+		    </tbody>
+		</table>
+		<input class='button' type="submit" name='generate' value='generate' formnovalidate>
+		<input class='button' type="submit" name='process' value='process'>
+</form>
+
+
+<div class="result" align="center">
+    {% if result %}
+   		<p style="font-size:50px" align='left'>{{ result }}</p>
+    {% endif %}
+
+</div>
+
+</fieldset>
+</div>
+</body>
+</html>
+
+
